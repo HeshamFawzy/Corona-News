@@ -10,7 +10,7 @@ class NewController extends Controller
 {
     public function index()
     {
-        $client = new Client(['verify' => 'C:\xampp\php\extras\ssl\cacert.pem']);
+        $client = new Client();
     	$response = $client->request('GET', 'http://newsapi.org/v2/top-headlines?country=eg&category=health&apiKey=c3a28f5bf8ca45d299987d1c8ba82745');
     	$statusCode = $response->getStatusCode();
         $body = $response->getBody()->getContents();
